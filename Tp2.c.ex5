@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+void ChargerTab(char *p, char Tab[]) {
+    int i = 0;
+
+    
+    while (p[i] != '\0') {
+        Tab[i] = p[i];
+        i++;
+    }
+
+    
+    Tab[i] = '\0';
+}
+
+int main() {
+    char chaine[100];  
+    char tableau[100];  
+
+    printf("Entrez une chaine de caracteres : ");
+    fgets(chaine, sizeof(chaine), stdin);
+
+    
+    if (chaine[strlen(chaine) - 1] == '\n') {
+        chaine[strlen(chaine) - 1] = '\0';
+    }
+
+    
+    ChargerTab(chaine, tableau);
+
+    
+    printf("Contenu du tableau : %s\n", tableau);
+
+    return 0;
+}
