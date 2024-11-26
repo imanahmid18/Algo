@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>  
+
+char *ChargerChaine(int N) {
+    
+    char *chaine = (char *)malloc((N + 1) * sizeof(char));
+    
+    
+    if (chaine == NULL) {
+        printf("Erreur d'allocation mémoire.\n");
+        exit(1); 
+    }
+
+    printf("Entrez une chaine de %d caracteres : ", N);
+    fgets(chaine, N + 1, stdin);
+
+   
+    if (chaine[N] == '\n' || chaine[N - 1] == '\n') {
+        chaine[strcspn(chaine, "\n")] = '\0';
+    }
+
+    return chaine; 
+}
+
+int main() {
+    int N;
+
+   
+    printf("Entrez la taille de la chaine : ");
+    scanf("%d", &N);
+    getchar(); 
+
+    
+    char *maChaine = ChargerChaine(N);
+
+ 
+    printf("La chaine lue : %s\n", maChaine);
+
+ 
+    free(maChaine);
+
+    return 0;
+}
