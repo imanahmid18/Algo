@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void InverserTab(char Tab[], char T[], int m) {
+    for (int i = 0; i < m; i++) {
+        T[i] = Tab[m - 1 - i];
+    }
+}
+
+int main() {
+    char Tab[] = {'a', 'b', 'c', 'd', 'e'};
+    int m = sizeof(Tab) / sizeof(Tab[0]);
+    char T[m];
+
+    InverserTab(Tab, T, m);
+
+    printf("Tableau inversé : ");
+    for (int i = 0; i < m; i++) {
+        printf("%c ", T[i]);
+    }
+
+    return 0;
+}
