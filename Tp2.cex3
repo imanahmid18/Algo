@@ -1,16 +1,8 @@
 #include <stdio.h>
+#include <string.h>
 
-void ChargerTab(char *p, char Tab[]) {
-    int i = 0;
-
-   
-    while (p[i] != '\0') {
-        Tab[i] = p[i];
-        i++;
-    }
-
-  
-    Tab[i] = '\0';
+void ChargerTab(const char *p, char Tab[]) {
+    strncpy(Tab, p, strlen(p) + 1);
 }
 
 int main() {
@@ -18,14 +10,10 @@ int main() {
     char tableau[100];
 
     printf("Entrez une chaine de caracteres : ");
-    fgets(chaine, sizeof(chaine), stdin);
-
-    
-    if (chaine[strcspn(chaine, "\n")] == '\n') {
-        chaine[strcspn(chaine, "\n")] = '\0';
+    if (fgets(chaine, sizeof(chaine), stdin) != NULL) {
+        chaine[strcspn(chaine, "\n")] = '\0'; // إزالة \n إن وجد
     }
 
-   
     ChargerTab(chaine, tableau);
 
     printf("Contenu du tableau : %s\n", tableau);
