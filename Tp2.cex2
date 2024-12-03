@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 int Longueur(char *ch) {
     int longueur = 0;
 
