@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    // تعريف المصفوفة
+    
     char matrice[5][5] = {
         {'1', '2', '3', '4', '5'},
         {'7', 'a', 'c', '8', 'd'},
@@ -10,7 +10,7 @@ int main() {
         {'2', '9', 't', 'm', 'k'}
     };
 
-    // عرض المصفوفة بالكامل
+   
     printf("La matrice :\n");
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
@@ -19,7 +19,7 @@ int main() {
         printf("\n");
     }
 
-    // عرض الصفوف ذات الفهارس الزوجية
+   
     printf("\nLignes avec un indice pair :\n");
     for (int i = 0; i < 5; i += 2) {
         for (int j = 0; j < 5; j++) {
@@ -28,7 +28,7 @@ int main() {
         printf("\n");
     }
 
-    // عرض العناصر ذات الأعمدة الفردية
+ 
     printf("\nElements avec un indice impair dans chaque ligne :\n");
     for (int i = 0; i < 5; i++) {
         for (int j = 1; j < 5; j += 2) {
@@ -37,7 +37,7 @@ int main() {
         printf("\n");
     }
 
-    // عرض العناصر الموجودة على القطرين
+   
     printf("\nLes diagonales :\n");
     printf("Principale : ");
     for (int i = 0; i < 5; i++) {
