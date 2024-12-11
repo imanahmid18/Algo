@@ -11,7 +11,7 @@ int main() {
 
     printf("Entrez une chaine de caracteres : ");
     if (fgets(chaine, sizeof(chaine), stdin) != NULL) {
-        chaine[strcspn(chaine, "\n")] = '\0'; // إزالة \n إن وجد
+        chaine[strcspn(chaine, "\n")] = '\0'; 
     }
 
     ChargerTab(chaine, tableau);
