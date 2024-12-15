@@ -1,29 +1,17 @@
 #include <stdio.h>
-#include <string.h>
-int Longueur(char *ch) {
-    int longueur = 0;
-
-    
-    while (ch[longueur] != '\0') {
-        longueur++;
-    }
-
-    return longueur;
-}
 
 int main() {
     char chaine[100];
+    int longueur = 0;
+
     printf("Entrez une chaine de caracteres : ");
     fgets(chaine, sizeof(chaine), stdin);
 
-    
-    if (chaine[strcspn(chaine, "\n")] == '\n') {
-        chaine[strcspn(chaine, "\n")] = '\0';
+    while (chaine[longueur] != '\0' && chaine[longueur] != '\n') {
+        longueur++;
     }
 
- 
-    int len = Longueur(chaine);
-    printf("La longueur de la chaine : %d\n", len);
+    printf("La longueur de la chaine : %d\n", longueur);
 
     return 0;
 }
