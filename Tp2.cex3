@@ -1,22 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
-void ChargerTab(const char *p, char Tab[]) {
-    strncpy(Tab, p, strlen(p) + 1);
-}
-
 int main() {
-    char chaine[100];
-    char tableau[100];
+    char chaine[100], tableau[100];
 
     printf("Entrez une chaine de caracteres : ");
-    if (fgets(chaine, sizeof(chaine), stdin) != NULL) {
-        chaine[strcspn(chaine, "\n")] = '\0'; 
-    }
+    fgets(chaine, sizeof(chaine), stdin);
+    chaine[strcspn(chaine, "\n")] = '\0'; 
 
-    ChargerTab(chaine, tableau);
+    strcpy(tableau, chaine);
 
     printf("Contenu du tableau : %s\n", tableau);
 
     return 0;
 }
+
