@@ -6,7 +6,7 @@ int T , i , j ;
        for(j=0; j<4;j++){
            printf ("%d\t" , A[i][j]);
             }
-   printf("\n");
+      printf("\n");
 } 
 
 for(i=0 ; i<4 ; i++){
@@ -17,5 +17,6 @@ for(i=0 ; i<4 ; i++){
    } 
 return 0;
 }
+
 
 	
